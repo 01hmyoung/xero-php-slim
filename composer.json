@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "calcinai/xero-php": "^1.8"
+    }
+}
