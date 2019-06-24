@@ -20,12 +20,19 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
     //save
     // // Fetch identifier values
 
-    if ($companyIdentifier == 1) {
-        include('configs/thorneWidgery.php');
-    }else{
-        return $response->getBody()->write(json_encode("error"));
-        exit;
-    }
+    // if ($companyIdentifier == 1) {
+        $config =   [
+            'oauth' => [
+                'callback' => 'localhost',
+                'consumer_key' => 'HPMBEXWBFW1OBI1WJF0IDDMI5QCBYG',
+                'consumer_secret' => 'BUDWWNAQH1HOQJ7HFD1JFONWML4IXK',
+                'rsa_private_key' => 'file://certs/privatekey.pem',
+            ],
+        ];
+    // }else{
+    //     return $response->getBody()->write(json_encode("error"));
+    //     exit;
+    // }
 
     // include('Database/db.php');
 
