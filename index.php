@@ -16,7 +16,7 @@ $app = new Slim\App();
 // Rount GET /hello
 $app->get('/invoices/{Identifier}', function ($request, $response, array $args) {
 
-    // $companyIdentifier = $args['Identifier'];
+    $companyIdentifier = $args['Identifier'];
     //save
     // // Fetch identifier values
 
