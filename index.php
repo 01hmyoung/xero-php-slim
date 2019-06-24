@@ -20,16 +20,12 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
     //save
     // // Fetch identifier values
 
-    // if ($companyIdentifier == 1) {
-    //     include('configs/thorneWidgery.php');
-    // }else if($companyIdentifier == 2){
-    //     include('configs/thorneWidgeryWealthManagement.php');
-    // }else if($companyIdentifier == 2){
-    //     include('configs/thorneWidgeryBusinessSolutions.php');
-    // }else{
-    //     return $response->getBody()->write(json_encode("error"));
-    //     exit;
-    // }
+    if ($companyIdentifier == 1) {
+        include('configs/thorneWidgery.php');
+    }else{
+        return $response->getBody()->write(json_encode("error"));
+        exit;
+    }
 
     // include('Database/db.php');
 
@@ -55,7 +51,7 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
     //     $dateModifided = date_create("2014-01-01T00:00:00");
     // }
 
-    // $xero = new PrivateApplication($config);
+    $xero = new PrivateApplication($config);
 
     // // Check Variables
     // $emptyCheck = 1;
