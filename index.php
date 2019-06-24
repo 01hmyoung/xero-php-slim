@@ -1,13 +1,15 @@
 <?php
 
+namespace abc;
+
 // autoload.php
 require 'vendor/autoload.php';
 
 // Xero API 
 use XeroPHP\Application\PrivateApplication;
-use XeroPHP\Models\Accounting\invoice;
-use XeroPHP\Models\Accounting\CreditNote;
-use XeroPHP\Models\Accounting\RepeatingInvoice;
+// use XeroPHP\Models\Accounting\invoice;
+// use XeroPHP\Models\Accounting\CreditNote;
+// use XeroPHP\Models\Accounting\RepeatingInvoice;
 
 
 // create Slim app
@@ -60,7 +62,7 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
 
     $xero = new PrivateApplication($config);
 
-    print_r($xero->load('Accounting\\Organisation')->execute());
+    print_r($xero->load('Accounting\\CreditNote')->page(1)->execute());
 
             // $invoices = $xero->load(Invoice::class)->where('Type', \XeroPHP\Models\Accounting\Invoice::INVOICE_TYPE_ACCREC)->modifiedAfter($dateModifided)->page($pageCount)->execute();
 
