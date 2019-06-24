@@ -30,7 +30,7 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
 
     $xero = new PrivateApplication($config);
 
-    print_r($xero->load('Accounting\\CreditNote')->page(1)->execute());
+    print_r($xero->load('Accounting\\Invoice')->page(1)->execute());
 
     return $response->getBody()->write(json_encode("OK123"));
 });
