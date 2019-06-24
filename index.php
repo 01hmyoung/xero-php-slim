@@ -244,7 +244,7 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
     // $conn->query($sql);
 
 
-    return $response->getBody()->write(json_encode("OK"));
+    return $response->getBody()->write(json_encode("OK123"));
 });
 
 $app->get('/creditnotes/{Identifier}', function ($request, $response, array $args) {
