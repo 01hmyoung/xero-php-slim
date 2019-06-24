@@ -62,7 +62,7 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
 
     $xero = new PrivateApplication($config);
 
-    print_r($xero->load('Accounting\\CreditNote')->page(1)->execute());
+    // print_r($xero->load('Accounting\\CreditNote')->page(1)->execute());
 
             // $invoices = $xero->load(Invoice::class)->where('Type', \XeroPHP\Models\Accounting\Invoice::INVOICE_TYPE_ACCREC)->modifiedAfter($dateModifided)->page($pageCount)->execute();
 
