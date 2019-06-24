@@ -60,7 +60,9 @@ $app->get('/invoices/{Identifier}', function ($request, $response, array $args) 
 
     $xero = new PrivateApplication($config);
 
-            $invoices = $xero->load(Invoice::class)->where('Type', \XeroPHP\Models\Accounting\Invoice::INVOICE_TYPE_ACCREC)->modifiedAfter($dateModifided)->page($pageCount)->execute();
+    print_r($xero->load('Accounting\\Organisation')->execute());
+
+            // $invoices = $xero->load(Invoice::class)->where('Type', \XeroPHP\Models\Accounting\Invoice::INVOICE_TYPE_ACCREC)->modifiedAfter($dateModifided)->page($pageCount)->execute();
 
 
     // // Check Variables
